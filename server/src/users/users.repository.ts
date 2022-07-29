@@ -13,6 +13,14 @@ export class UsersRepository {
     return findOne;
   }
 
+  async findOneById(id): Promise<any> {
+    const findOneById = await this.userModel.findById(id);
+    return {
+      _id: findOneById._id,
+      email: findOneById.email,
+    };
+  }
+
   async createOne(user): Promise<any> {
     const createOne = await this.userModel.create(user);
     return createOne;

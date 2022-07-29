@@ -9,6 +9,10 @@ export class UsersService {
     return this.usersRepository.findOne(email);
   }
 
+  async findOneById(id: string): Promise<any> {
+    return this.usersRepository.findOneById(id);
+  }
+
   async createOne(user): Promise<any> {
     const createOne = await this.usersRepository.createOne(user);
     return createOne;
