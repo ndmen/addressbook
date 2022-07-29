@@ -7,7 +7,7 @@ export class GroupsController {
   constructor(private readonly groupsService: GroupsService) {}
 
   @Post()
-  create(@Body() createGroupDto: CreateGroupDto) {
-    return this.groupsService.create(createGroupDto);
+  async create(@Body() createGroupDto: CreateGroupDto) {
+    return await this.groupsService.create(createGroupDto);
   }
 }

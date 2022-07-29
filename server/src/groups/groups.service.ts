@@ -1,9 +1,12 @@
 import { Injectable } from '@nestjs/common';
 import { CreateGroupDto } from './dto/create-group.dto';
+import { GroupsRepository } from './groups.repository';
 
 @Injectable()
 export class GroupsService {
-  create(createGroupDto: CreateGroupDto) {
-    return 'This action adds a new group';
+  constructor(private readonly groupsRepository: GroupsRepository) {}
+
+  async create(createGroupDto: CreateGroupDto) {
+    return await this.groupsRepository.create(createGroupDto);
   }
 }
