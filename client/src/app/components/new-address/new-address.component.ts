@@ -17,8 +17,8 @@ export class NewAddressComponent implements OnInit {
   selectable = true;
   removable = true;
   addOnBlur = true;
-  @ViewChild('chipList') chipList;
-  @ViewChild('resetAddressForm') myNgForm;
+  @ViewChild('chipList') chipList : any;
+  @ViewChild('resetAddressForm') myNgForm : any;
   readonly separatorKeysCodes: number[] = [ENTER, COMMA];
   addressForm: FormGroup;
   subjectArray: Subject[] = [];

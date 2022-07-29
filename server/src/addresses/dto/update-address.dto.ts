@@ -1,30 +1,30 @@
 import { IsNotEmpty, IsString, IsOptional } from 'class-validator';
-// import { ApiProperty } from '@nestjs/swagger';
+import { ApiProperty } from '@nestjs/swagger';
 
 export class UpdateAddressDto {
-  //   @ApiProperty()
+  @ApiProperty()
   @IsNotEmpty()
   @IsString()
   name: string;
 
-  //   @ApiProperty()
+  @ApiProperty()
   @IsNotEmpty()
   @IsString()
   phone: string;
 
-  //   @ApiProperty()
+  @ApiProperty()
   @IsOptional()
   @IsNotEmpty()
   @IsString()
   birthday: string;
 
-  //   @ApiProperty()
+  @ApiProperty()
   @IsOptional()
   @IsNotEmpty()
   @IsString()
   groups: string;
 
-  //   @ApiProperty()
+  @ApiProperty()
   @IsOptional()
   @IsNotEmpty()
   @IsString()

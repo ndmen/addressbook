@@ -24,24 +24,24 @@ export class ApiService {
     return this.http.get(`${this.endpoint}/addresses`);
   }
   // Get address
-  GetAddress(id): Observable<any> {
+  GetAddress(id : string): Observable<any> {
     let API_URL = `${this.endpoint}/addresses/${id}`;
     return this.http.get(API_URL, { headers: this.headers }).pipe(
-      map((res: Response) => {
+      map((res: any) => {
         return res || {};
       }),
       catchError(this.errorMgmt)
     );
   }
   // Update address
-  UpdateAddress(id, data): Observable<any> {
+  UpdateAddress(id: string, data: any): Observable<any> {
     let API_URL = `${this.endpoint}/addresses/${id}`;
     return this.http
       .patch(API_URL, data, { headers: this.headers })
       .pipe(catchError(this.errorMgmt));
   }
   // Delete address
-  DeleteAddress(id): Observable<any> {
+  DeleteAddress(id : string): Observable<any> {
     var API_URL = `${this.endpoint}/addresses/${id}`;
     return this.http.delete(API_URL).pipe(catchError(this.errorMgmt));
   }
